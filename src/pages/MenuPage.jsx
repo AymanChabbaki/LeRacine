@@ -1076,6 +1076,17 @@ function MenuPage() {
         </button>
       </main>
 
+      {/* Mobile Swipe Hint */}
+      <div className="mobile-swipe-hint">
+        <svg className="swipe-hand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 12h20" />
+          <path d="m5 9-3 3 3 3" />
+          <path d="m19 9 3 3-3 3" />
+          <path d="M12 18a1.5 1.5 0 0 0 1.5-1.5V10h-3v6.5A1.5 1.5 0 0 0 12 18z" fill="currentColor" fillOpacity="0.15" />
+        </svg>
+        <span>Glissez pour feuilleter</span>
+      </div>
+
       {/* Mobile Nav Indicators (Dot bar) */}
       <div className="mobile-book-indicators" id="mobileIndicators">
         {Array.from({ length: 11 }).map((_, i) => (

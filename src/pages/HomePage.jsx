@@ -253,11 +253,16 @@ function HomePage({ theme, setTheme, onOpenModal }) {
 
       {/* 2. Hero Section */}
       <section id="hero" className="hero loaded">
-        <div 
-          className="hero-bg" 
-          id="heroBg" 
-          style={{ backgroundImage: "url('/assets/images/545987648_750421697863706_289076069569542233_n.jpg')" }}
-        ></div>
+        <video
+          className="hero-bg"
+          id="heroBg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster='/assets/images/545987648_750421697863706_289076069569542233_n.jpg'
+          src="/assets/videos/mp_.mp4"
+        />
         <div className="hero-overlay"></div>
         <div className="hero-content">
           
