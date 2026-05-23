@@ -11,6 +11,24 @@ function HomePage({ theme, setTheme, onOpenModal }) {
   const [valetStatus, setValetStatus] = useState({ alert: 'Véhicule Stationné (A-14)', details: 'Votre véhicule est garé en toute sécurité dans notre parking sous surveillance.' })
   const eveningRef = useRef(null)
   const timerInterval = useRef(null)
+  const [tilt, setTilt] = useState({ x: 0, y: 0 })
+
+  const handleBadgeMouseMove = (e) => {
+    const card = e.currentTarget
+    const box = card.getBoundingClientRect()
+    const x = e.clientX - box.left - box.width / 2
+    const y = e.clientY - box.top - box.height / 2
+    
+    // Max 15 degrees tilt
+    const rX = (y / (box.height / 2)) * -15
+    const rY = (x / (box.width / 2)) * 15
+    
+    setTilt({ x: rX, y: rY })
+  }
+
+  const handleBadgeMouseLeave = () => {
+    setTilt({ x: 0, y: 0 })
+  }
 
   // 1. Time-of-day greeting widget
   useEffect(() => {
@@ -246,6 +264,58 @@ function HomePage({ theme, setTheme, onOpenModal }) {
           <div className="time-greeting-widget" id="timeGreetingWidget">
             <span className="greeting-text">{greeting.text}</span>
             <span className="greeting-rec">{greeting.rec}</span>
+          </div>
+
+          {/* Interactive 3D Brand Badge */}
+          <div className="hero-3d-badge-container">
+            <div 
+              className="hero-3d-badge" 
+              id="hero3dBadge"
+              onMouseMove={handleBadgeMouseMove}
+              onMouseLeave={handleBadgeMouseLeave}
+              style={{
+                '--rx': `${tilt.x}deg`,
+                '--ry': `${tilt.y}deg`
+              }}
+            >
+              <div className="hero-badge-bg-grid"></div>
+              
+              {/* Outer text: circular text path */}
+              <div className="hero-badge-outer-text">
+                <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+                  <path 
+                    id="badgeTextPath" 
+                    d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" 
+                    fill="none"
+                  />
+                  <text fontFamily="Cinzel" fontSize="6.3" fontWeight="600" fill="currentColor">
+                    <textPath href="#badgeTextPath" startOffset="0%">
+                      LE RACINE • CASABLANCA • 33°35'24&quot;N 7°38'12&quot;W •
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              {/* Inner gold root-leaf crest */}
+              <div className="hero-badge-inner-crest">
+                <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '100%', height: '100%' }}>
+                  {/* Central shield/crest circle */}
+                  <circle cx="30" cy="30" r="22" strokeDasharray="3 3" strokeWidth="0.8" />
+                  {/* A vertical root growing from the bottom, splitting into an elegant branch with leaves */}
+                  <path d="M 30 50 C 30 42, 28 38, 30 32" strokeWidth="2" />
+                  <path d="M 30 50 C 26 51, 23 52, 20 54" strokeWidth="1" />
+                  <path d="M 30 50 C 34 51, 37 52, 40 54" strokeWidth="1" />
+                  <path d="M 30 32 C 26 26, 18 24, 16 16 C 24 18, 26 26, 30 32 Z" fill="currentColor" fillOpacity="0.2" />
+                  <path d="M 30 32 C 34 26, 42 24, 44 16 C 36 18, 34 26, 30 32 Z" fill="currentColor" fillOpacity="0.2" />
+                  <path d="M 30 32 C 29 25, 30 20, 30 12 C 31 20, 31 25, 30 32 Z" fill="currentColor" fillOpacity="0.2" />
+                  <path d="M 30 32 L 30 12" strokeWidth="1.5" />
+                  
+                  {/* Stars on sides */}
+                  <path d="M 18 30 L 19 32 L 21 32 L 19.5 33 L 20 35 L 18 34 L 16 35 L 16.5 33 L 15 32 L 17 32 Z" fill="currentColor" />
+                  <path d="M 42 30 L 43 32 L 45 32 L 43.5 33 L 44 35 L 42 34 L 40 35 L 40.5 33 L 39 32 L 41 32 Z" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
           </div>
 
           <span className="hero-tagline">Brasserie · Café · Lounge</span>
