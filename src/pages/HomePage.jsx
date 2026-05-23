@@ -257,6 +257,29 @@ function HomePage({ theme, setTheme, onOpenModal }) {
 
       {/* 3. L'Expérience Section */}
       <section id="experience">
+        {/* Roots Backdrop: Core Trunk & Spreading branches */}
+        <div className="section-roots" style={{ top: '-300px', height: 'calc(100% + 300px)' }}>
+          <svg className="roots-svg" viewBox="0 0 1000 1100" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M500,800 C500,600 480,500 450,450 C420,400 380,350 350,300 C300,230 250,180 200,150" />
+            <path d="M500,800 C500,620 520,530 550,470 C580,410 630,360 670,300 C720,230 780,180 800,150" />
+            <path d="M500,800 C500,650 500,550 500,450 C500,380 480,320 460,250 C440,180 450,120 420,50" strokeWidth="2.5" />
+            <path d="M500,800 C500,650 500,550 500,450 C500,380 520,320 540,250 C560,180 550,120 580,50" strokeWidth="2.5" />
+            
+            <path d="M420,50 C410,40 380,30 350,35 C320,40 290,60 260,80" />
+            <path d="M580,50 C590,40 620,30 650,35 C680,40 710,60 740,80" />
+            <path d="M460,250 C420,240 370,220 330,180 C290,140 280,90 290,50" />
+            <path d="M540,250 C580,240 630,220 670,180 C710,140 720,90 710,50" />
+            <path d="M350,300 C310,290 260,270 210,220 C160,170 140,110 150,50" className="accent" />
+            <path d="M670,300 C710,290 760,270 810,220 C860,170 880,110 870,50" className="accent" />
+            
+            <path d="M500,800 C470,820 430,850 400,880 C360,920 340,960 320,1000" />
+            <path d="M500,800 C530,820 570,850 600,880 C640,920 660,960 680,1000" />
+            <path d="M500,800 C500,830 490,880 470,920 C450,960 460,990 440,1050" strokeWidth="2" />
+            <path d="M500,800 C500,830 510,880 530,920 C550,960 540,990 560,1050" strokeWidth="2" />
+            <path d="M500,800 C460,830 400,870 350,910 C300,950 280,980 250,1050" className="accent" />
+            <path d="M500,800 C540,830 600,870 650,910 C700,950 720,980 750,1050" className="accent" />
+          </svg>
+        </div>
         <div className="container">
           <div className="concept-grid">
             <div className="concept-text">
@@ -305,6 +328,21 @@ function HomePage({ theme, setTheme, onOpenModal }) {
 
       {/* 5. Interactive Menu Section */}
       <section id="menu" className="menu-section">
+        {/* Roots Backdrop: Central winding roots */}
+        <div className="section-roots">
+          <svg className="roots-svg" viewBox="0 0 1000 1200" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M500,0 C490,100 450,200 460,350 C470,500 530,650 510,800 C490,950 450,1100 450,1200" strokeWidth="2.5" />
+            <path d="M500,0 C510,100 550,200 540,350 C530,500 470,650 490,800 C510,950 550,1100 550,1200" strokeWidth="2.5" />
+            
+            <path d="M460,350 C400,400 300,450 200,480 C100,510 50,550 20,600" />
+            <path d="M540,350 C600,400 700,450 800,480 C900,510 950,550 980,600" />
+            <path d="M510,800 C450,850 350,900 250,950 C150,1000 80,1050 50,1150" className="accent" />
+            <path d="M490,800 C550,850 650,900 750,950 C850,1000 920,1050 950,1150" className="accent" />
+            
+            <path d="M465,150 C410,220 320,280 220,310 C120,340 60,380 30,450" />
+            <path d="M535,150 C590,220 680,280 780,310 C880,340 940,380 970,450" />
+          </svg>
+        </div>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span className="italic-subtitle">Une Carte de Saison</span>
@@ -365,6 +403,19 @@ function HomePage({ theme, setTheme, onOpenModal }) {
 
       {/* 6. Evening Dining Section */}
       <section id="eveningSection" className="evening-dining" ref={eveningRef}>
+        {/* Roots Backdrop: Winding roots */}
+        <div className="section-roots">
+          <svg className="roots-svg" viewBox="0 0 1000 1000" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M450,0 C450,150 520,300 520,450 C520,600 470,750 480,900 C480,940 490,970 500,1000" strokeWidth="2.5" />
+            <path d="M550,0 C550,150 480,300 480,450 C480,600 530,750 520,900 C520,940 510,970 500,1000" strokeWidth="2.5" />
+            
+            <path d="M520,450 C580,500 680,550 780,570 C880,590 940,650 970,750" />
+            <path d="M480,450 C420,500 320,550 220,570 C120,590 60,650 30,750" />
+            
+            <path d="M495,200 C420,250 300,320 200,380 C100,440 50,520 20,600" className="accent" />
+            <path d="M505,200 C580,250 700,320 800,380 C900,440 950,520 980,600" className="accent" />
+          </svg>
+        </div>
         <div className="container">
           <div className="evening-grid">
             <div className="evening-images">
@@ -390,6 +441,19 @@ function HomePage({ theme, setTheme, onOpenModal }) {
 
       {/* 7. Valet Service Simulator Section */}
       <section className="valet-section" id="valet">
+        {/* Roots Backdrop: Deep root anchors */}
+        <div className="section-roots">
+          <svg className="roots-svg" viewBox="0 0 1000 800" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M500,0 C500,100 470,200 420,300 C370,400 300,480 200,550 C100,620 30,700 0,800" strokeWidth="3" />
+            <path d="M500,0 C500,100 530,200 580,300 C630,400 700,480 800,550 C900,620 970,700 1000,800" strokeWidth="3" />
+            
+            <path d="M500,0 C490,150 490,300 460,420 C430,540 350,650 250,750" strokeWidth="2" />
+            <path d="M500,0 C510,150 510,300 540,420 C570,540 650,650 750,750" strokeWidth="2" />
+            
+            <path d="M480,250 C410,320 300,400 200,480 C100,560 50,680 20,800" className="accent" />
+            <path d="M520,250 C590,320 700,400 800,480 C900,560 950,680 980,800" className="accent" />
+          </svg>
+        </div>
         <div className="container">
           <div className="valet-grid">
             <div className="valet-text">

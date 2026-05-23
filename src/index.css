@@ -2626,3 +2626,70 @@ footer {
         font-size: 0.75rem;
     }
 }
+
+/* ==========================================================================
+   VISUAL ROOTS BACKBONE SYSTEM (ARBRE DE RACINES)
+   ========================================================================== */
+.section-roots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roots-svg {
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    color: var(--color-gold);
+}
+
+/* Slow organic breathing animation for roots (increased opacity for visibility) */
+@keyframes roots-pulse {
+    0% { opacity: 0.12; }
+    50% { opacity: 0.28; }
+    100% { opacity: 0.12; }
+}
+
+.roots-svg path {
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: roots-pulse 8s ease-in-out infinite;
+}
+
+.roots-svg path.accent {
+    color: var(--color-maroon);
+    animation-delay: 2.5s;
+}
+
+/* Dark mode adjustment for visibility */
+.theme-dark .roots-svg {
+    color: var(--color-gold);
+}
+
+/* Core layouts stack above background roots */
+#hero, #experience, #menu, #eveningSection, #valet {
+    position: relative;
+}
+
+#experience {
+    overflow: visible !important;
+}
+
+.hero-content,
+#experience .container,
+.vibe-panels,
+#menu .container,
+#eveningSection .container,
+#valet .container {
+    position: relative;
+    z-index: 2;
+}
